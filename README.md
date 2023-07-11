@@ -1,5 +1,7 @@
 # comp-project
 
+Doin a vue
+
 ## Project setup
 ```
 npm install
