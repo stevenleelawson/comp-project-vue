@@ -1,13 +1,16 @@
 <template>
 	<header>
-		header
+		<div>
+			header
+		</div>
 	</header>
 </template>
 
-<style>
-	header {
+<style scoped>
+	div {
 		width: 100%;
-		background-color: aqua;
+		background-image: linear-gradient(to right bottom, olivedrab, chartreuse);
 		font-size: 4rem;
+		border-bottom: 4px solid rgb(26, 1, 94);
 	}
 </style>
