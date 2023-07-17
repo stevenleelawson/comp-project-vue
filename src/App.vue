@@ -1,14 +1,21 @@
 <template>
 	<app-header></app-header>
-	<div class="container">Hello {{ name }}</div>
+	<div class="container">Hello {{ name }}
+		<!-- kebab here::::: -->
+		<compu-user-profile :name="name"></compu-user-profile>
+	</div>
 	<app-footer></app-footer>
 </template>
 
 <script>
 	import Footer from './components/header-footer/Footer.vue';
+	import compuUserProfile from './User/Profile.vue';
+
 	export default {
 		components: {
-			'app-footer': Footer
+			'app-footer': Footer,
+			// REMEMBER: Vue will automatically make it kebab-case under the hood::::::::::
+			compuUserProfile,
 		},
 		data() {
 			return {
