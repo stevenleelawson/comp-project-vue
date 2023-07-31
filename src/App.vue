@@ -2,7 +2,18 @@
 	<app-header></app-header>
 	<div class="container">Hello {{ name }}
 		<!-- kebab here::::: -->
-		<compu-user-profile :name="name"></compu-user-profile>
+		<div class="container">
+			<compu-user-profile 
+				:name="name" 
+				:aka="aka"
+				:userAge="userAge"
+				:userParents="userParents"
+				@update-name="aka = $event"
+				@say-hello="alertHello"
+				:updateAge="updateAge"
+			></compu-user-profile>
+			<button @click="updateName">update nombre</button>
+		</div>
 	</div>
 	<app-footer></app-footer>
 </template>
@@ -19,7 +30,22 @@
 		},
 		data() {
 			return {
-				name: 'Arya'
+				name: 'Arya',
+				aka: 'Cookie Teapot',
+				userAge: 3,
+				userParents: { daddy: 'Steven', mommy: 'None yet'}
+			}
+		},
+		methods: {
+			updateName() {
+				this.name = 'chipchip'
+			},
+			alertHello(e) {
+				console.log('eeee', e)
+				alert(e.target.innerText)
+			},
+			updateAge(value) {
+				this.userAge = value;
 			}
 		}
 	}
@@ -36,7 +62,7 @@
 
 	.container {
 		font-size: 2rem;
-		min-height: 84vh;
+		/* min-height: 84vh; */
 		padding: 20px;
 		background-image: linear-gradient(to right bottom, #eb2f64, #BA265D);
 		color: #333;
