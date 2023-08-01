@@ -4,6 +4,7 @@
 			<h3>user info</h3>
 			<ul class="user-list">
 				<li><span>Name:</span>{{ name }}</li>
+				<li><span>Last Name:</span>{{ lastname }}</li>
 				<li><span>AKA:</span>{{ aka }}</li>
 				<li><span>Age:</span>{{ userAge }}</li>
 			</ul>
@@ -24,11 +25,29 @@
 		// can also pass props as an object with proptypes (note the Uppercase for String)::::::::
 		props: {
 			name: String,
-			aka: String,
-			userAge: Number,
+			lastname: {
+				// NOTE: can validate emits the exact same way
+				type: String,
+				validator(value) {
+					console.log('lastname', value)
+					if (value === 'Lawson') {
+						return true;
+					}
+					console.log(`ERROR: lastname prop is ${value} expected lastname to be Lawson`)
+					return false;
+				}
+			},
+			// can use a required prop in an obj
+			aka: {
+				type: String,
+				required: true,
+			},
+			// can use an array for multiple types
+			userAge: [Number, String],
 			userParents: Object,
 			updateAge: Function
 		},
+		emits: ['say-hello'],
 		methods: {
 			updateLastname() {
 				// EMIT !!!! Is the way to change data in the parent in Vue	
@@ -63,5 +82,15 @@
 	.user-profile {
 		border: 1px solid #fff;
 		padding: 10px;
+	}
+
+	li {
+		list-style: none;
+		font-size: 2rem;
+	}
+	
+	span {
+		padding: 0 1rem;
+
 	}
 </style>

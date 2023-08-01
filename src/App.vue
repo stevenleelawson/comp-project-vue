@@ -1,52 +1,32 @@
 <template>
 	<app-header></app-header>
-	<div class="container">Hello {{ name }}
-		<!-- kebab here::::: -->
-		<div class="container">
-			<compu-user-profile 
-				:name="name" 
-				:aka="aka"
-				:userAge="userAge"
-				:userParents="userParents"
-				@update-name="aka = $event"
-				@say-hello="alertHello"
-				:updateAge="updateAge"
-			></compu-user-profile>
-			<button @click="updateName">update nombre</button>
-		</div>
+	<div class="container">
+		<comp-cars :cars="cars"></comp-cars>
+
 	</div>
 	<app-footer></app-footer>
 </template>
 
 <script>
 	import Footer from './components/header-footer/Footer.vue';
-	import compuUserProfile from './User/Profile.vue';
+	import compCars from './components/Cars';
 
 	export default {
 		components: {
 			'app-footer': Footer,
-			// REMEMBER: Vue will automatically make it kebab-case under the hood::::::::::
-			compuUserProfile,
+			compCars,
 		},
 		data() {
 			return {
-				name: 'Arya',
-				aka: 'Cookie Teapot',
-				userAge: 3,
-				userParents: { daddy: 'Steven', mommy: 'None yet'}
+				cars: [
+					{ model: 'F9', brand: 'ferrari'},
+					{ model: '911', brand: 'porsche'},
+					{ model: 'prius', brand: 'toyota'},
+				]
 			}
 		},
 		methods: {
-			updateName() {
-				this.name = 'chipchip'
-			},
-			alertHello(e) {
-				console.log('eeee', e)
-				alert(e.target.innerText)
-			},
-			updateAge(value) {
-				this.userAge = value;
-			}
+			
 		}
 	}
 </script>
@@ -61,13 +41,14 @@
 	}
 
 	.container {
-		font-size: 2rem;
+		font-size: 3rem;
 		/* min-height: 84vh; */
 		padding: 20px;
 		background-image: linear-gradient(to right bottom, #eb2f64, #BA265D);
 		color: #333;
+		height: 80vh;
 	}
 	div {
-		color:orangered;
+		color:black;
 	}
 </style>
