@@ -6,7 +6,7 @@
 
 <style>
 	footer {
-		background-image: linear-gradient(to right bottom, olivedrab, chartreuse);
+		background-image: linear-gradient(to right bottom, blue, purple);
 		height: 16vh;
 	}
 </style>
