@@ -7,7 +7,8 @@
 <style>
 	header {
 		width: 100%;
-		background-color: aqua;
+		background-color: black;
+		color: #fff;
 		font-size: 4rem;
 	}
 </style>
