@@ -25,8 +25,16 @@
 				]
 			}
 		},
+		provide() {
+			return {
+				changeCar: this.changeCar,
+				cars: this.cars,
+			}
+		},
 		methods: {
-			
+			changeCar() {
+				this.cars[0].brand = 'Taco'
+			}
 		}
 	}
 </script>

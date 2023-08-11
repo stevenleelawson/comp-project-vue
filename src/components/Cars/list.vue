@@ -7,12 +7,13 @@
 			</li>
 			
 		</ul>
+		<button @click="changeCar">press</button>
 	</div>
 </template>
 
 <script>
 export default {
-	props: ['cars'],
+	inject: ['cars', 'changeCar'],
 	data() {
 		return {
 			

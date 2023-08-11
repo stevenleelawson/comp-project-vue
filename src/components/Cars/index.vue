@@ -2,7 +2,7 @@
 	<div>
 		<h1>Welcome to the Cars (what)</h1>
 		<div>
-			<comp-list :cars="cars"></comp-list>
+			<comp-list></comp-list>
 		</div>
 	</div>
 </template>
@@ -10,7 +10,6 @@
 <script>
 import compList from './list.vue';
 	export default {
-		props: ['cars'],
 		components: {
 			compList
 		},
