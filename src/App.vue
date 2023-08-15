@@ -2,6 +2,11 @@
 	<app-header></app-header>
 	<div class="container">
 		<comp-cars :cars="cars"></comp-cars>
+		<comp-brands>
+			<ul>
+				<li v-for="(brand, index) in brands" :key="brand + index">{{ brand }}</li>
+			</ul>
+		</comp-brands>
 
 	</div>
 	<app-footer></app-footer>
@@ -10,11 +15,13 @@
 <script>
 	import Footer from './components/header-footer/Footer.vue';
 	import compCars from './components/Cars';
+	import compBrands from './components/Cars/Brand.vue';
 
 	export default {
 		components: {
 			'app-footer': Footer,
 			compCars,
+			compBrands,
 		},
 		data() {
 			return {
@@ -22,7 +29,8 @@
 					{ model: 'F9', brand: 'ferrari'},
 					{ model: '911', brand: 'porsche'},
 					{ model: 'prius', brand: 'toyota'},
-				]
+				],
+				brands: ['Dodge', 'Jeep', 'Toyota']
 			}
 		},
 		provide() {
