@@ -1,62 +1,26 @@
 <template>
+  <div>
 	<app-header></app-header>
 	<div class="container">
-		<comp-cars :cars="cars"></comp-cars>
-
+		<h1>arya bnada</h1>
+		<compLife></compLife>
 	</div>
 	<app-footer></app-footer>
+  </div>
 </template>
 
 <script>
-	import Footer from './components/header-footer/Footer.vue';
-	import compCars from './components/Cars';
+import compLife from './components/Life';
+import appFooter from './components/header-footer/Footer.vue'
 
-	export default {
-		components: {
-			'app-footer': Footer,
-			compCars,
-		},
-		data() {
-			return {
-				cars: [
-					{ model: 'F9', brand: 'ferrari'},
-					{ model: '911', brand: 'porsche'},
-					{ model: 'prius', brand: 'toyota'},
-				]
-			}
-		},
-		provide() {
-			return {
-				changeCar: this.changeCar,
-				cars: this.cars,
-			}
-		},
-		methods: {
-			changeCar() {
-				this.cars[0].brand = 'Taco'
-			}
-		}
+export default {
+	components: {
+		compLife,
+		appFooter
 	}
+}
 </script>
 
 <style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		font-size: 10px;
-		font-family: 'Roboto', sans-serif;
-	}
 
-	.container {
-		font-size: 3rem;
-		/* min-height: 84vh; */
-		padding: 20px;
-		background-image: linear-gradient(to right bottom, #eb2f64, #BA265D);
-		color: #333;
-		height: 80vh;
-	}
-	div {
-		color:black;
-	}
 </style>

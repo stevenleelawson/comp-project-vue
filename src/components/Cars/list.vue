@@ -7,7 +7,7 @@
 			</li>
 			
 		</ul>
-		<button @click="changeCar">press</button>
+		<button class="comp__btn" @click="changeCar">press</button>
 	</div>
 </template>
 
@@ -30,5 +30,11 @@ export default {
 	li {
 		list-style: none;
 		font-size: 2rem;
+	}
+
+	.comp__btn {
+		padding: 1rem;
+		border-radius: 50px;
+		margin: 5rem 1rem;
 	}
 </style>
