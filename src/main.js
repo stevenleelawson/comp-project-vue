@@ -1,10 +1,10 @@
 import { createApp } from 'vue';
-import App from './App';
+import App2 from './App2';
 
 // globally register components
 import Header from '../src/components/header-footer/Header';
 
-const app = createApp(App);
+const app = createApp(App2);
 
 
 // note: Vue converts to kebab-case under the hood
