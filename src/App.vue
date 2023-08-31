@@ -5,11 +5,15 @@
 		<h1>arya bands</h1>
 		<button @click="this.activeComp = 'compMike'">Mike</button>
 		<button @click="this.activeComp = 'compSteven'">Steven</button>
+
+		<!-- standard v-if deal:::::: -->
 		<!-- <compMike></compMike>
 		<compSteven></compSteven> -->
 
 		<!-- instead of using v-if on the above components, can just do below: -->
-		<component :is="activeComp"></component>
+		<keep-alive include="Steven">
+			<component :is="activeComp"></component>
+		</keep-alive>
 	</div>
 
 	<app-footer></app-footer>
