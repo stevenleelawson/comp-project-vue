@@ -2,14 +2,10 @@
   <div>
 	<app-header></app-header>
 	<div class="container">
-		<h1>arya bands</h1>
-		<button @click="this.activeComp = 'compMike'">Mike</button>
-		<button @click="this.activeComp = 'compSteven'">Steven</button>
-		<!-- <compMike></compMike>
-		<compSteven></compSteven> -->
-
-		<!-- instead of using v-if on the above components, can just do below: -->
-		<component :is="activeComp"></component>
+		<div v-awesome="'Lil Baby'"></div>
+		<div v-user-lastname="'RUh roh'"></div>
+		<h1>arya</h1>
+		<compLife></compLife>
 	</div>
 
 	<app-footer></app-footer>
@@ -18,19 +14,25 @@
 
 <script>
 import appFooter from './components/header-footer/Footer.vue'
-import compMike from './components/Players/Mike.vue';
-import compSteven from './components/Players/Steven.vue';
+
 export default {
-	components: {
-		appFooter,
-		compMike,
-		compSteven,
-	},
 	data() {
 		return {
-			activeComp: 'compSteven'
+			lastName: 'Lawson'
 		}
-	}
+	},
+	// HOW TO DECLARE A CUSTOM DIRECTIVE LOCALLY IN THE COMPONENT
+	directives: {
+		'user-lastname': {
+			// NOTE YOU CAN USE LIFECYCLE HOOKS in Custom Directives
+			beforeMount(el, binding) {
+				el.innerHTML = binding.value
+			}
+		}
+	},
+	components: {
+		appFooter,
+	},
 }
 </script>
 
