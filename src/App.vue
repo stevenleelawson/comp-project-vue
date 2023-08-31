@@ -2,6 +2,7 @@
   <div>
 	<app-header></app-header>
 	<div class="container">
+		<div v-awesome="'Lil Baby'"></div>
 		<h1>arya bnada</h1>
 		<compLife></compLife>
 	</div>
